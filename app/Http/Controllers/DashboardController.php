@@ -10,6 +10,7 @@ use App\Models\Income;
 use App\Models\IncomeCategory;
 use App\Models\ExpenseCategory;
 use Maatwebsite\Excel\Concerns\ToArray;
+use Illuminate\Support\Facades\Http;
 
 class DashboardController extends Controller
 {
@@ -55,8 +56,21 @@ class DashboardController extends Controller
         $pieValues = $pieData->pluck('total');
 
 
-
+        $eurRate = $this->fetchExchangeRate();
         
-        return view("loggedin.dashboard", compact("userExpenses","userIncomes", "transactions", "incomeData" , 'expenseData', 'incomeCategories', 'expenseCategories', 'pieLabels', 'pieValues'));
+        return view("loggedin.dashboard", compact("userExpenses","userIncomes", "transactions", "incomeData" , 'expenseData', 'incomeCategories', 'expenseCategories', 'pieLabels', 'pieValues', 'eurRate'));
+    }
+
+    private function fetchExchangeRate()
+    {
+        $apiKey = env('EXCHANGE_RATE_API_KEY');
+
+        $response = Http::get("https://v6.exchangerate-api.com/v6/{$apiKey}/latest/USD");
+
+        if ($response->successful()){
+            return $response->json()["conversion_rates"]["EUR"];
+        } else{
+            return "N/A";
+        }
     }
 }
