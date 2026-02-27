@@ -8,7 +8,7 @@
 
 <div class="container-fluid">
   <div class="row">
-    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse min-vh-100 d-flex flex-column" style="height: 100vh; position: fixed;">
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse min-vh-100 d-flex flex-column">
       <div class="position-sticky pt-3 d-flex flex-column flex-grow-1" style="height: 100%;">
         <ul class="nav flex-column">
           <li class="nav-item">
@@ -86,7 +86,6 @@
               Year-end sale
             </a>
              --}}
-        </ul>
         <ul class="nav flex-column mt-auto pb-3" style="background-color: #008080;">
           <li class="nav-item border-top pt-2">
             <a class="nav-link text-center fw-bold text-white" href="/subscribe">
