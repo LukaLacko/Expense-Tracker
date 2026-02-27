@@ -10,11 +10,13 @@ use App\Http\Controllers\ExchangeController;
 use App\Http\Controllers\ExpenseController;
 use App\Http\Controllers\IncomeController;
 use App\Http\Controllers\NewsletterController;
+use App\Http\Controllers\ReportController;
 use App\Http\Middleware\AuthMiddleware;
 use App\Http\Middleware\CheckUserLoggedIn;
 use Illuminate\Support\Facades\Route;
 use Maatwebsite\Excel\Facades\Excel;
 use Psy\ManualUpdater\Checker;
+use SebastianBergmann\CodeCoverage\Report\Xml\Report;
 
 use function Symfony\Component\String\s;
 
@@ -110,6 +112,9 @@ Route::middleware(AuthMiddleware::class)->group(function () {
     // Exchange rate Calculator
     Route::get("/exchange", [ExchangeController::class,"index"])->name("loggedin.exchange");
     Route::post("/exchange", [ExchangeController::class,"calculate"])->name("exchange.calculate");
+
+    // Reports 
+    Route::get("/reports", [ReportController::class,"reports"])->name("loggedin.reports");
 
     Route::get("/subscribe", function(){
         return view("loggedin.subscribe");

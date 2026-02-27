@@ -76,11 +76,11 @@
     <table class="table border table-secondary w-auto">
         <thead>
             <tr>
-                <th style="width: 1%; white-space: nowrap;">Total Income:</th>
+                <th style="width: 1%; white-space: nowrap;">Total Expenses:</th>
                 <th>${{ $totalExpense }}</th>
             </tr>
             <tr>
-                <th style="width: 1%; white-space: nowrap;">Avg Income:</th>
+                <th style="width: 1%; white-space: nowrap;">Avg Expense:</th>
                 <th>${{ $avgExpense }}</th>
             </tr>
         </thead>

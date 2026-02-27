@@ -41,6 +41,9 @@
                 <a class="nav-link {{ Route::is('loggedin.exchange') ? 'active' : '' }}" href="{{ route("loggedin.exchange") }}">Currency Converter</a>
               </li>
               <li>
+                <a class="nav-link {{ Route::is('loggedin.reports') ? 'active' : '' }}" href="{{ route("loggedin.reports") }}">Reports</a>
+              </li>
+              <li>
                 <a class="nav-link" href="{{ route("logout") }}">Logout</a>
               </li>
             @endauth
