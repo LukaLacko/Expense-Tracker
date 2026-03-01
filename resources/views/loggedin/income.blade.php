@@ -28,16 +28,27 @@
         ];
     @endphp
 
-    <div class="btn-group shadow-sm flex-grow-1">
+    <div class="d-none d-md-flex btn-group shadow-sm flex-grow-1">
         <a href="{{ route("loggedin.income") }}" class="btn btn-sm {{ !request()->has('month') ? 'btn-primary' : 'btn-outline-secondary' }}">All</a>
         @foreach ($months as $number => $name)
         <a href="{{ route("loggedin.income", ["month" => $number]) }}" class="btn btn-sm flex-fill {{ request('month') == $number ? 'btn-primary' : 'btn-outline-secondary' }}">
             {{ $name }}
         </a>
-            
         @endforeach
     </div>
 
+    <!-- Dropdown - just for Phone-->
+    <div class="d-md-none flex-grow">
+        <select class="form-select" onchange="window.location=this.value">
+            <option value="{{ route('loggedin.income') }}" {{ !request()->has('month') ? 'selected' : '' }}>All</option>
+            @foreach ($months as $number => $name)
+            <option value="{{ route('loggedin.income', ['month' => $number]) }}" {{ request('month') == $number ? 'selected' : '' }}>
+                {{ $name }}
+            </option>
+            @endforeach
+        </select>
+    </div>
+    
 </div>
 
 <div class="d-flex justify-content-between mt-5 mb-2">

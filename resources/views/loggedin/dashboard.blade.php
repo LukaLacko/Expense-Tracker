@@ -6,9 +6,11 @@
     <!-- Custom styles for this template -->
     <link href="{{ asset("css/dashboard.css") }}" rel="stylesheet">
 
+
+
 <div class="container-fluid">
   <div class="row">
-    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse min-vh-100 d-flex flex-column">
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse min-vh-100">
       <div class="position-sticky pt-3 d-flex flex-column flex-grow-1" style="height: 100%;">
         <ul class="nav flex-column">
           <li class="nav-item">
@@ -99,17 +101,13 @@
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">Dashboard</h1>
-        <div class="btn-toolbar mb-2 mb-md-0">
+        <div class="btn-toolbar mb-2 mb-md-0 w-100 justify-content-center justify-content-md-end">
           <div class="btn-group me-2">
             <span class="badge rounded-pill bg-success bg-opacity-10 text-success border border-success border-opacity-30 px-3 py-2 me-3">
               <i class="bi bi-currency-exchange me-1"></i> 1 USD = {{ $eurRate }} EUR
           </span>            
           <a class="btn btn-sm btn-outline-secondary rounded-1" href="{{ route("transactions.export") }}">Export Transactions</a>
           </div>
-          <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
-            <span data-feather="calendar"></span>
-            This week
-          </button>
         </div>
       </div>
 

@@ -28,14 +28,26 @@
         ];
     @endphp
 
-    <div class="btn-group shadow-sm flex-grow-1">
-        <a href="{{ route("loggedin.expenses") }}" class="btn btn-sm {{ !request()->has('month') ? 'btn-primary' : 'btn-outline-secondary' }}">All</a>
+
+    <div class="d-none d-md-flex btn-group shadow-sm flex-grow-1">
+        <a href="{{ route("loggedin.income") }}" class="btn btn-sm {{ !request()->has('month') ? 'btn-primary' : 'btn-outline-secondary' }}">All</a>
         @foreach ($months as $number => $name)
-        <a href="{{ route("loggedin.expenses", ["month" => $number]) }}" class="btn btn-sm flex-fill {{ request('month') == $number ? 'btn-primary' : 'btn-outline-secondary' }}">
+        <a href="{{ route("loggedin.income", ["month" => $number]) }}" class="btn btn-sm flex-fill {{ request('month') == $number ? 'btn-primary' : 'btn-outline-secondary' }}">
             {{ $name }}
         </a>
-            
         @endforeach
+    </div>
+
+    <!-- Dropdown - just for Phone-->
+    <div class="d-md-none flex-grow">
+        <select class="form-select" onchange="window.location=this.value">
+            <option value="{{ route('loggedin.income') }}" {{ !request()->has('month') ? 'selected' : '' }}>All</option>
+            @foreach ($months as $number => $name)
+            <option value="{{ route('loggedin.income', ['month' => $number]) }}" {{ request('month') == $number ? 'selected' : '' }}>
+                {{ $name }}
+            </option>
+            @endforeach
+        </select>
     </div>
 
 </div>
@@ -44,31 +56,33 @@
     <h1>Expenses:</h1>
     <a class="btn btn-primary btn-lg align-self-center" href="{{ route("expense.create") }}">Add Expense</a>
 </div>
+<div class="table-responsive">
+    <table class="table table-hover table-striped border">
+        <thead>
+            <th>Title</th>
+            <th>Category</th>
+            <th>Amount</th>
+            <th>Created at</th>
+            <th>Details</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </thead>
+        <tbody>
+            @foreach($userExpenses as $expense)
+            <tr>
+                <td>{{ $expense->title }}</td>
+                <td>{{ $expense->category->name }}</td>
+                <td class="fw-bold">{{ $expense->amount }} $</td>
+                <td>{{ $expense->created_at->format('d.m.Y') }}</td>
+                <td><a href="{{ route("expense.details", $expense->id) }}">Details</a></td>
+                <td><a href="{{ route("expense.edit", $expense->id) }}" class="btn btn-secondary">Edit</a></td>
+                <td><a href="{{ route("expense.delete", $expense->id) }}" class="btn btn-danger">Delete</a></td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
+</div>
 
-<table class="table table-hover table-striped border">
-    <thead>
-        <th>Title</th>
-        <th>Category</th>
-        <th>Amount</th>
-        <th>Created at</th>
-        <th>Details</th>
-        <th>Edit</th>
-        <th>Delete</th>
-    </thead>
-    <tbody>
-        @foreach($userExpenses as $expense)
-        <tr>
-            <td>{{ $expense->title }}</td>
-            <td>{{ $expense->category->name }}</td>
-            <td class="fw-bold">{{ $expense->amount }} $</td>
-            <td>{{ $expense->created_at->format('d.m.Y') }}</td>
-            <td><a href="{{ route("expense.details", $expense->id) }}">Details</a></td>
-            <td><a href="{{ route("expense.edit", $expense->id) }}" class="btn btn-secondary">Edit</a></td>
-            <td><a href="{{ route("expense.delete", $expense->id) }}" class="btn btn-danger">Delete</a></td>
-        </tr>
-        @endforeach
-    </tbody>
-</table>
 <div class="paggination-wrapper">
     {{ $userExpenses->links() }}
 </div>

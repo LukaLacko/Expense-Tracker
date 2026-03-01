@@ -7,7 +7,7 @@
 @section("content")
 
 <div class="container d-flex justify-content-center">
-    <div class="col-md-8">
+    <div class="col-12 col-md-8">
         <div class="card mt-4 rounded-4">
             <div class="card-header bg-primary text-white">
                 <h4 class="text-center">Add Income</h4>

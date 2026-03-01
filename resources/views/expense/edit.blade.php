@@ -6,7 +6,7 @@ Edit
 
 @section("content")
 <div class="row d-flex justify-content-center">
-    <div class="col-md-8">
+    <div class="col-12 col-md-8">
         <div class="card mt-4  rounded-4">
             <div class="card-header bg-secondary">
                 <h4 class="text-center text-white">Edit Expense</h4>

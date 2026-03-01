@@ -68,7 +68,7 @@
         maintainAspectRatio: false,
         legend: {
           display: true,
-          position: 'right',
+          position: window.innerWidth < 768 ? 'bottom' : 'right',
           labels: {
             // VELIČINA TEKSTA
             fontSize: 16,        
