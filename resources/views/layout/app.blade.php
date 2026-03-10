@@ -6,6 +6,18 @@
     <title>@yield('title')</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="{{ asset('css/carousel.css') }}" rel="stylesheet">
+
+    <style>
+      .fade-in {
+          opacity: 0;
+          transform: translateY(20px);
+          transition: opacity 0.6s ease, transform 0.6s ease;
+      }
+      .fade-in.visible {
+          opacity: 1;
+          transform: translateY(0);
+      }
+  </style>
 </head>
 <body>
     <header>
@@ -66,5 +78,19 @@
     <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js"></script>
 
     @stack('scripts') 
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+          const observer = new IntersectionObserver((entries) => {
+              entries.forEach(entry => {
+                  if (entry.isIntersecting) {
+                      entry.target.classList.add('visible');
+                  }
+              });
+          }, { threshold: 0.1 });
+  
+          document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+      });
+  </script>
 </body>
 </html>

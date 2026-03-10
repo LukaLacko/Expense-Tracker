@@ -81,7 +81,7 @@
   <div class="container marketing">
 
     <!-- Three columns of text below the carousel -->
-    <div class="row">
+    <div class="row fade-in">
       <div class="col-lg-4">
         <img src="{{ asset("img/ibrahim-rifath-OApHds2yEGQ-unsplash.jpg") }}" class="rounded-circle" width="140" height="140">
 
@@ -107,7 +107,7 @@
 
     <hr class="featurette-divider">
 
-    <div class="row featurette">
+    <div class="row featurette fade-in">
       <div class="col-md-7">
         <h2 class="featurette-heading">Managing money doesn’t have to be complicated<span class="text-muted"></span></h2>
         <p class="lead">Our expense and income tracker helps you stay organized, reduce unnecessary spending, and build better financial habits — all in one place...</p>
@@ -119,7 +119,7 @@
 
     <hr class="featurette-divider">
 
-    <div class="row featurette">
+    <div class="row featurette fade-in">
       <div class="col-md-7 order-md-2">
         <h2 class="featurette-heading">Help Your Money Grow</h2>
         <p class="lead">When you track your income and expenses, you stop guessing and start making smarter decisions. This app helps you identify unnecessary spending, optimize your budget, and redirect your money toward what really matters.</p>
@@ -132,7 +132,7 @@
 
     <hr class="featurette-divider">
 
-    <div class="row featurette">
+    <div class="row featurette fade-in">
       <div class="col-md-7">
         <h2 class="featurette-heading">Structured tracking for long-term financial growth</h2>
         <p class="lead">Maintain a clear financial structure over time through categorized transactions, historical records, and consistent financial monitoring that supports sustainable growth.</p>
