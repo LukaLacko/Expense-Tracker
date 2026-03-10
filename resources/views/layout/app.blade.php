@@ -81,6 +81,13 @@
 
     <script>
       document.addEventListener('DOMContentLoaded', () => {
+  
+          document.querySelectorAll('.fade-group').forEach(group => {
+              group.querySelectorAll('.fade-in').forEach((el, index) => {
+                  el.style.transitionDelay = `${index * 0.15}s`;
+              });
+          });
+  
           const observer = new IntersectionObserver((entries) => {
               entries.forEach(entry => {
                   if (entry.isIntersecting) {
@@ -90,6 +97,7 @@
           }, { threshold: 0.1 });
   
           document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  
       });
   </script>
 </body>

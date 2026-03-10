@@ -81,24 +81,24 @@
   <div class="container marketing">
 
     <!-- Three columns of text below the carousel -->
-    <div class="row fade-in">
+    <div class="row fade-group">
       <div class="col-lg-4">
-        <img src="{{ asset("img/ibrahim-rifath-OApHds2yEGQ-unsplash.jpg") }}" class="rounded-circle" width="140" height="140">
+        <img src="{{ asset("img/ibrahim-rifath-OApHds2yEGQ-unsplash.jpg") }}" class="rounded-circle fade-in" width="140" height="140">
 
-        <h2>Secure & Private</h2>
-        <p>Your financial data stays private and secure, always.</p>
+        <h2 class="fade-in">Secure & Private</h2>
+        <p class="fade-in">Your financial data stays private and secure, always.</p>
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4">
-        <img src="{{ asset("img/calculator.jpg") }}" class="bd-placeholder-img rounded-circle" width="140" height="140">
+        <img src="{{ asset("img/calculator.jpg") }}" class="bd-placeholder-img rounded-circle fade-in" width="140" height="140">
 
-        <h2>Visual Reports & Charts</h2>
-        <p>See your spending trends with clear charts monthly totals, category breakdowns, and comparisons over time.</p>
+        <h2 class="fade-in">Visual Reports & Charts</h2>
+        <p class="fade-in">See your spending trends with clear charts monthly totals, category breakdowns, and comparisons over time.</p>
       </div><!-- /.col-lg-4 -->
       <div class="col-lg-4">
-        <img src="{{ asset("img/sajtt.jpg") }}" class="bd-placeholder-img rounded-circle" width="140" height="140">
+        <img src="{{ asset("img/sajtt.jpg") }}" class="bd-placeholder-img rounded-circle fade-in" width="140" height="140">
 
-        <h2>Smart Expense Tracking</h2>
-        <p>Easily add, edit, and categorize your expenses. Everything is stored securely and organized by date and category.</p>
+        <h2 class="fade-in">Smart Expense Tracking</h2>
+        <p class="fade-in">Easily add, edit, and categorize your expenses. Everything is stored securely and organized by date and category.</p>
       </div><!-- /.col-lg-4 -->
     </div><!-- /.row -->
 
